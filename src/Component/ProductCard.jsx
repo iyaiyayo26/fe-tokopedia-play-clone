@@ -1,6 +1,8 @@
 import { Button, Card, CardBody, CardFooter, CardHeader, Heading, Image, Text } from "@chakra-ui/react"
+import useFormatToRupiah from "../Hooks/useFormatToRupiah";
 
 const ProductCard = ({title, price, link}) => {
+    const formattedValue = useFormatToRupiah(price);
 
     
     return(
@@ -14,7 +16,7 @@ const ProductCard = ({title, price, link}) => {
                 <Heading size='md'>{title}</Heading>
             </CardHeader>
             <CardBody>
-                <Text>{price}</Text>
+                <Text>{formattedValue}</Text>
             </CardBody>
             <CardFooter>
                 <a href={link}>

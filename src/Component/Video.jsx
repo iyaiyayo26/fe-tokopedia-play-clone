@@ -1,23 +1,19 @@
-import { Box, Card, Heading } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import useFetchData from "../Hooks/useFetchData";
+import LoadingMessage from "./LoadingMessage";
+import ErrorMessage from "./ErrorMessage";
 
 const Video = ({videoId}) => {
-    const video_url = 'http://localhost:5000/api/videos';
+    const video_url = 'https://be-tokopedia-play-clone-production.up.railway.app/api/videos';
     
     const {data, isLoading, error} = useFetchData(video_url);
 
     if(isLoading){
-        return(
-            <Heading size='xl'>Loading...</Heading>
-        )
+        return <LoadingMessage />
     }
     
     if(error){
-            return(
-                <Card align='center'>
-                    <Heading size='xl'>Error: {error.message}</Heading>
-                </Card>
-            )
+        return <ErrorMessage errorMessage={error.message}/>
     }
     return(
         <>

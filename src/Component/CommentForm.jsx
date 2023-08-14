@@ -1,16 +1,18 @@
-import { Button, Card, FormLabel, Input, Textarea } from "@chakra-ui/react";
+import { Button, Card, FormLabel, Input, Textarea, useToast } from "@chakra-ui/react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import CommentList from "./CommentList";
 
 const CommentForm = ({videoId}) => {
-    const endpoint = 'http://localhost:5000/api/comment/'
+    const endpoint = 'https://be-tokopedia-play-clone-production.up.railway.app/api/comment/'
 
     const [data, setData] = useState({
         username: '',
         comment: ''
     })
     const [comments, setComments] = useState([]);
+    const [error, setError] = useState(null);
+    const toast = useToast();
 
     useEffect(() => {
         getComments();
@@ -20,6 +22,10 @@ const CommentForm = ({videoId}) => {
         const newData = {...data};
         newData[e.target.id] = e.target.value;
         setData(newData);
+    }
+
+    if(error){
+        return alert(error.message);
     }
      
     const submitComment = async (e) => {
@@ -35,7 +41,9 @@ const CommentForm = ({videoId}) => {
             })
             
         } catch (error) {
-            console.log(error);
+            // console.error(error.message);
+            setError(error);
+
         }
     }
 
@@ -44,7 +52,8 @@ const CommentForm = ({videoId}) => {
             const response = await axios.get(`${endpoint}${videoId}`);
             setComments(response.data)
         } catch (error) {
-            console.log(error);
+            // console.error(error.message);
+            setError(error);
         }
     }
 
@@ -62,12 +71,14 @@ const CommentForm = ({videoId}) => {
                     type="text"
                     id="username"
                     value={data.username}
+                    required
                     onChange={(e) => handle(e)}
                 />
                 <FormLabel>Comment:</FormLabel>
                 <Textarea
                     type="text"
                     id="comment"
+                    required
                     value={data.comment}
                     onChange={(e) => handle(e)}
                 />

@@ -1,29 +1,21 @@
-import { Card, Heading, SimpleGrid } from "@chakra-ui/react";
+import { SimpleGrid } from "@chakra-ui/react";
 import ProductCard from "./ProductCard";
 import useFetchData from "../Hooks/useFetchData";
+import LoadingMessage from "./LoadingMessage";
+import ErrorMessage from "./ErrorMessage";
 
 const ProductList = ({videoId}) => {
-    const productlist_url = `http://localhost:5000/api/video/product/${videoId}`;
-
+    const productlist_url = `https://be-tokopedia-play-clone-production.up.railway.app/api/video/product/${videoId}`;
     const {data, isLoading, error} = useFetchData(productlist_url);
 
     if(isLoading){
-        return(
-            <Heading size='xl'>Loading...</Heading>
-        )
+        return <LoadingMessage />
     }
     
     if(error){
-            return(
-                <Card align='center'>
-                    <Heading size='xl'>Error: {error.message}</Heading>
-                </Card>
-            )
+            return <ErrorMessage errorMessage={error.message}/>
     }
 
-    const formatToRupiah = (number) => {
-        return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(number);
-    }
 
     return(
         <SimpleGrid spacing={4} templateColumns='repeat(auto-fill, minmax(200px, 1fr))' >
@@ -32,7 +24,7 @@ const ProductList = ({videoId}) => {
                             <ProductCard 
                                 key={product._id}
                                 title={product.title}
-                                price={formatToRupiah(product.price)}
+                                price={product.price}
                                 link={product.link}
                             />
                         ))
