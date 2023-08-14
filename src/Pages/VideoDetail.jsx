@@ -11,13 +11,11 @@ const VideoDetail = () => {
         <>
             <Grid templateColumns='repeat(2, 1fr)' gap={6} marginLeft={30} marginTop={30} marginBottom={30} marginRight={30}>
                 <GridItem w='100%' >
-                    {/*nampilin produk  */}
                     <ProductList 
                         videoId={videoId}
                     />
                 </GridItem>
                 <GridItem w='95%' h='500' >
-                    {/* watch video */}
                     <Video videoId={videoId}/>
                     <Box marginTop={8} >
                         <CommentForm 

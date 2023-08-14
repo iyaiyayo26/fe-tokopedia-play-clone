@@ -41,7 +41,6 @@ const CommentForm = ({videoId}) => {
             })
             
         } catch (error) {
-            // console.error(error.message);
             setError(error);
 
         }
@@ -52,7 +51,6 @@ const CommentForm = ({videoId}) => {
             const response = await axios.get(`${endpoint}${videoId}`);
             setComments(response.data)
         } catch (error) {
-            // console.error(error.message);
             setError(error);
         }
     }
