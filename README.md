@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+## Project Name & Pitch
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### Tokopedia Play Clone:
 
-## Available Scripts
+A web application where users can watch product sales videos and purchase the proucts. Users can also add comments about the products being sold, and use the search feature to find desired brands.
 
-In the project directory, you can run:
+## Project Status
+ 
+project ini telah selesai sampai production dan sudah dilakukan deployment di vercel.  
+link acces: 
 
-### `npm start`
+## Project Screen Shot(s)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Home Page:
+![1](https://github.com/iyaiyayo26/fe-tokopedia-play-clone/assets/100679287/f47b92ec-35ab-4bc3-8273-0bfef8de62db)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Input Brand into the search bar:
+![2](https://github.com/iyaiyayo26/fe-tokopedia-play-clone/assets/100679287/e51c9415-1055-4d62-83d2-ebfef8219536)
 
-### `npm test`
+Go to detail page when user click watch button on the home page:
+![3](https://github.com/iyaiyayo26/fe-tokopedia-play-clone/assets/100679287/e9132fec-ec8f-4113-aadc-e6586ae50197)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation and Setup Instructions 
 
-### `npm run build`
+Clone down this repository. You will need `node` and `npm` installed globally on your machine.  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Installation:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+`npm install`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Install react router:
 
-### `npm run eject`
+`npm install react-router-dom`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Install Chakra UI:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+To Run Test Suite:  
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+`npm test`  
 
-## Learn More
+To Start Server:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+`npm start`  
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To Visit App:
 
-### Code Splitting
+`localhost:3000/ideas`  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Reflection
 
-### Analyzing the Bundle Size
+This is the 1 week final project during my participation in Generasi Gigih. This project is the culmination of the learning journey throughout my time in Generasi Gigih as a Full Stack participant. Until now, I'm still learning and familiarizing myself with the documentations for add new features for this project. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+I want to create a web application where users can watch videos, browse products, and add comments. Users can also use the search feature to find brands whose products they want to see. I started this process by using the `create-react-app`, then add `react-router-v6` and `@Chakra-ui`
 
-### Making a Progressive Web App
+While working on this project, I encountered several challenges such as implementing and utilizing custom hooks, creating efficient and reuseable components. Due to the time constraints of this project, I focused on ensuring that everything functions smoothly when integrated with the API I had previously developed (API LINK HERE). That's why I used Chackra UI to expedite the application's interface development. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+At the end of the day, the technologies implemented in this project are React, React-Router v6, Chakra UI. I chose to use the `create-react-app` to create a ready to use React project, including directory structure, configuration files, and necessary dependencies, and practice what I've learned at Generasi Gigih as a Full Stack participant
