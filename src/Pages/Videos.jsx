@@ -1,8 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Button, Card, Heading, Input, InputGroup, InputRightElement, SimpleGrid} from '@chakra-ui/react'
+import { Button, Input, InputGroup, InputRightElement, SimpleGrid} from '@chakra-ui/react'
 import VideoCard from "../Component/VideoCard";
 import { useNavigate } from "react-router-dom";
+import LoadingMessage from "../Component/LoadingMessage";
+import ErrorMessage from "../Component/ErrorMessage";
 
 const Videos = () => {
     const [brand, setBrand] = useState('');
@@ -11,7 +13,7 @@ const Videos = () => {
     const [error, setError] = useState(null);
     const navigate = useNavigate();
 
-    const url_videos = 'http://localhost:5000/api/videos';
+    const url_videos = 'https://be-tokopedia-play-clone-production.up.railway.app/api/videos';
 
     useEffect(() => {
         getVideos();
@@ -26,32 +28,26 @@ const Videos = () => {
             setError(error);
             setIsLoading(false);
         }
-     };
+    };
+
+    const searchBrand = async () => {
+        try {
+            const response = await axios.get(`https://be-tokopedia-play-clone-production.up.railway.app/api/search?brand=${brand}`);
+            setVideos(response.data);
+            setIsLoading(false);
+        } catch (error) {
+            setError(error);
+            setIsLoading(false);
+        }
+    }
 
     if(isLoading){
-        return(
-            <Heading size='xl'>Loading...</Heading>
-        )
+        return <LoadingMessage />
     }
     
     if(error){
-            return(
-                <Card align='center'>
-                    <Heading size='xl'>Error: {error.message}</Heading>
-                </Card>
-            )
+        return <ErrorMessage errorMessage={error.message}/>
     }
-
-    
-    const searchBrand = async () => {
-        try {
-            const response = await axios.get(`http://localhost:5000/api/search?brand=${brand}`);
-            setVideos(response.data)
-        } catch (error) {
-            console.log(error);
-        }
-    }
-    
 
     return(
         <>
