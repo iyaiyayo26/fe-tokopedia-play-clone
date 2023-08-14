@@ -46,7 +46,7 @@ To Start Server:
 
 To Visit App:
 
-`localhost:3000/ideas`  
+`https://fe-tokopedia-play-clone.vercel.app/`  
 
 ## Reflection
 
@@ -54,6 +54,6 @@ This is the 1 week final project during my participation in Generasi Gigih. This
 
 I want to create a web application where users can watch videos, browse products, and add comments. Users can also use the search feature to find brands whose products they want to see. I started this process by using the `create-react-app`, then add `react-router-v6` and `@Chakra-ui`
 
-While working on this project, I encountered several challenges such as implementing and utilizing custom hooks, creating efficient and reuseable components. Due to the time constraints of this project, I focused on ensuring that everything functions smoothly when integrated with the API I had previously developed (API LINK HERE). That's why I used Chackra UI to expedite the application's interface development. 
+While working on this project, I encountered several challenges such as implementing and utilizing custom hooks, creating efficient and reuseable components. Due to the time constraints of this project, I focused on ensuring that everything functions smoothly when integrated with the API I had previously developed (https://github.com/iyaiyayo26/BE-tokopedia-play-clone). That's why I used Chackra UI to expedite the application's interface development. 
 
 At the end of the day, the technologies implemented in this project are React, React-Router v6, Chakra UI. I chose to use the `create-react-app` to create a ready to use React project, including directory structure, configuration files, and necessary dependencies, and practice what I've learned at Generasi Gigih as a Full Stack participant
